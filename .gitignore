@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+CodeDesign/.vs/CodeDesign/v16/Browse.VC.db
+
+CodeDesign/.vs/CodeDesign/v16/Browse.VC.db-shm
+
+CodeDesign/.vs/CodeDesign/v16/Browse.VC.db-wal
+
+CodeDesign/.vs/CodeDesign/v16/Browse.VC.opendb
+
+CodeDesign/.vs/CodeDesign/v16/ipch/AutoPCH/566eaed4e3b1b4a4/DOUBLELINKEDLIST.ipch
+
+CodeDesign/CodeDesign.sln
