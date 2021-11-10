@@ -68,10 +68,18 @@ public:
 
 #pragma endregion
 
+#pragma region Sorting
+
+	void SortHighestScoreAscending();
+	void SortHighestScoreDescending();
+
+#pragma endregion
+
 	// Finds a specific node based on the ID
 	Node* GetNode(int nodeID);
 	// Draws the list
 	void DrawList();
+	// Sorts the list
 
 private:
 	Node* rootNode;

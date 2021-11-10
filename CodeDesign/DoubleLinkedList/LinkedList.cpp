@@ -114,6 +114,76 @@ void LinkedList::DeleteNode(Node* node)
 	}
 }
 
+void LinkedList::SortHighestScoreAscending()
+{
+	Node* nodes = new Node[50];
+	int nodeCount = 0;
+	Node* node = rootNode;
+	while (true)
+	{
+		if (node == nullptr) break;
+
+		nodes[nodeCount] = *node;
+		nodeCount++;
+	}
+
+	if (nodeCount > 0)
+	{
+		LinkedList* sortedList = new LinkedList();
+		for (int i = 0; i < nodeCount; ++i)
+		{
+			Node* HighestScore = nullptr;
+			for (int j = 0; j < nodeCount; ++j)
+			{
+				if (sortedList->GetNode(nodes[j].NodeID) != nullptr)
+					continue;
+
+				if (HighestScore->ProfileData->GetHighestScore() < nodes[j].ProfileData->GetHighestScore())
+				{
+					HighestScore = &nodes[j];
+				}
+			}
+
+			sortedList->AddNewNode(HighestScore);
+		}
+	}
+}
+
+void LinkedList::SortHighestScoreDescending()
+{
+	Node* nodes = new Node[50];
+	int nodeCount = 0;
+	Node* node = rootNode;
+	while (true)
+	{
+		if (node == nullptr) break;
+
+		nodes[nodeCount] = *node;
+		nodeCount++;
+	}
+
+	if (nodeCount > 0)
+	{
+		LinkedList* sortedList = new LinkedList();
+		for (int i = 0; i < nodeCount; ++i)
+		{
+			Node* HighestScore = nullptr;
+			for (int j = 0; j < nodeCount; ++j)
+			{
+				if (sortedList->GetNode(nodes[j].NodeID) != nullptr)
+					continue;
+
+				if (HighestScore->ProfileData->GetHighestScore() > nodes[j].ProfileData->GetHighestScore())
+				{
+					HighestScore = &nodes[j];
+				}
+			}
+
+			sortedList->AddNewNode(HighestScore);
+		}
+	}
+}
+
 Node* LinkedList::GetNode(int nodeID)
 {
 	Node* node = rootNode;			// Set the root node as the first node
@@ -125,7 +195,7 @@ Node* LinkedList::GetNode(int nodeID)
 			return node;
 	}
 
-	return new Node();
+	return nullptr;
 }
 
 void LinkedList::DrawList()
