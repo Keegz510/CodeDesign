@@ -22,6 +22,14 @@ public:
 		ProfileData = nullptr;
 	}
 
+	Node(Profile* data)
+	{
+		NodeID = -1;
+		BeforeNode = nullptr;
+		AfterNode = nullptr;
+		ProfileData = data;
+	}
+
 	Node(Node* before, Node* after, Profile* data)
 	{
 		NodeID = -1;
@@ -38,14 +46,32 @@ public:
 	LinkedList(Node* rootNode);
 	~LinkedList();
 
+#pragma region Adding Nodes
 
 	void AddRootNode(Node* node);
 	// Add after a certain node
 	void AddNodeAfter(Node* newNode, Node* nodeAfter);
 	// Adds a new node to the end of the list
 	void AddNewNode(Node* newNode);
+
+#pragma endregion
+
+#pragma region Deleting Nodes
+
+	// Deletes the root node
+	void DeleteRootNode();
+	// Deletes the last node
+	void DeleteLastNode();
+	// Deletes a random node
+	void DeleteNode(Node* node);
+
+
+#pragma endregion
+
 	// Finds a specific node based on the ID
 	Node* GetNode(int nodeID);
+	// Draws the list
+	void DrawList();
 
 private:
 	Node* rootNode;
