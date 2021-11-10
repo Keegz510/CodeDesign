@@ -28,9 +28,15 @@ void LinkedList::AddRootNode(Node* node)
 
 void LinkedList::AddNodeAfter(Node* newNode, Node* nodeAfter)
 {
-	
+	if (newNode != nullptr)
+	{
+		newNode->BeforeNode = nodeAfter;
+		newNode->AfterNode = nodeAfter->AfterNode;
+		nodeAfter->AfterNode = newNode;
+	}
 }
 
 void LinkedList::AddNewNode(Node* newNode)
 {
+	
 }
