@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Profile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Profile.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>
