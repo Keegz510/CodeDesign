@@ -38,5 +38,23 @@ void LinkedList::AddNodeAfter(Node* newNode, Node* nodeAfter)
 
 void LinkedList::AddNewNode(Node* newNode)
 {
-	
+	if (rootNode == nullptr)
+	{
+		rootNode = newNode;
+		return;
+	}
+
+
+	Node* nextNode = rootNode;
+	while (true)
+	{
+		if (nextNode->AfterNode == nullptr)
+		{
+			nextNode->AfterNode = newNode;
+		}
+		else
+		{
+			nextNode = nextNode->AfterNode;
+		}
+	}
 }
