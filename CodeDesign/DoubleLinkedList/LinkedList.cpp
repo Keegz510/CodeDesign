@@ -23,7 +23,8 @@ void LinkedList::AddRootNode(Node* node)
 			rootNode->BeforeNode = node;
 			node->AfterNode = rootNode;
 		}
-			
+		
+		node->NodeID = GetNodeID();
 
 		// Make the new node root node
 		rootNode = node;
@@ -37,6 +38,7 @@ void LinkedList::AddNodeAfter(Node* newNode, Node* nodeAfter)
 		newNode->BeforeNode = nodeAfter;
 		newNode->AfterNode = nodeAfter->AfterNode;
 		nodeAfter->AfterNode = newNode;
+		newNode->NodeID = GetNodeID();
 	}
 }
 
@@ -62,13 +64,17 @@ void LinkedList::AddNewNode(Node* newNode)
 			nextNode = nextNode->AfterNode;
 		}
 	}
+
+	newNode->NodeID = GetNodeID();
 }
 
 Node* LinkedList::GetNode(int nodeID)
 {
-	Node* node = rootNode;
+	Node* node = rootNode;			// Set the root node as the first node
+	// Loop while the node isn't null
 	while (node != nullptr)
 	{
+		// Return the node if the nodeID's match
 		if (node->NodeID == nodeID)
 			return node;
 	}

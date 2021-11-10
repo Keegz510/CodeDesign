@@ -14,6 +14,14 @@ public:
 	Node* AfterNode;			// Node that comes from after this node
 	Profile* ProfileData;		// Data to store
 
+	Node()
+	{
+		NodeID = -1;
+		BeforeNode = nullptr;
+		AfterNode = nullptr;
+		ProfileData = nullptr;
+	}
+
 	Node(Node* before, Node* after, Profile* data)
 	{
 		NodeID = -1;
@@ -42,5 +50,7 @@ public:
 private:
 	Node* rootNode;
 	int nodeIDCount = 0;
+	// Increment the node ID and return it
+	inline int GetNodeID() { return nodeIDCount += 1; }
 };
 
