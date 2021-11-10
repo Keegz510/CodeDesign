@@ -60,3 +60,9 @@ CodeDesign/.vs/CodeDesign/v17/Preview/Browse.VC.db-wal
 CodeDesign/.vs/CodeDesign/v17/Preview/Browse.VC.opendb
 
 CodeDesign/.vs/CodeDesign/v17/Preview/ipch/AutoPCH/d1bc8990c910369b/PROFILE.ipch
+
+*.ipch
+
+CodeDesign/Debug/
+
+CodeDesign/DoubleLinkedList/Debug/
