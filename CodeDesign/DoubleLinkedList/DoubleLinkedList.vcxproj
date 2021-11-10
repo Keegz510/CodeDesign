@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AppController.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Profile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AppController.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Profile.h" />
