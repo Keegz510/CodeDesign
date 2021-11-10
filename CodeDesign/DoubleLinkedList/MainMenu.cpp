@@ -1,4 +1,5 @@
 #include "MainMenu.h"
+#include "AppController.h"
 
 MainMenu::MainMenu()
 {
@@ -18,6 +19,8 @@ void MainMenu::DrawState()
 	std::cout << "2 - Add To List Front" << std::endl;
 	std::cout << "3 - Add To List Arbitrary Location" << std::endl;
 	std::cout << "4 - Add To List Back" << std::endl;
+	std::cout << "5 - Help" << std::endl;
+	std::cout << "6 - Exit" << std::endl;
 	std::cout << "=========" << std::endl;
 	std::cout << "Select an Option: ";
 	Input();
@@ -31,7 +34,7 @@ void MainMenu::Input()
 	switch (input)
 	{
 		case 1:
-			// TODO: Change State
+			AppController::LoadListState();
 			break;
 		case 2:
 			// Change State
