@@ -12,7 +12,15 @@ public:
 	int NodeID;
 	Node* BeforeNode;			// Node that comes before this node
 	Node* AfterNode;			// Node that comes from after this node
-	Profile* ProfileData;
+	Profile* ProfileData;		// Data to store
+
+	Node(Node* before, Node* after, Profile* data)
+	{
+		NodeID = -1;
+		BeforeNode = before;
+		AfterNode = after;
+		ProfileData = data;
+	}
 };
 
 class LinkedList
@@ -21,6 +29,7 @@ public:
 	LinkedList();
 	LinkedList(Node* rootNode);
 	~LinkedList();
+
 
 	void AddRootNode(Node* node);
 	// Add after a certain node
@@ -32,5 +41,6 @@ public:
 
 private:
 	Node* rootNode;
+	int nodeIDCount = 0;
 };
 
