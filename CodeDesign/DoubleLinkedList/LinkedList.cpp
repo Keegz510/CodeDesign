@@ -74,14 +74,44 @@ void LinkedList::AddNewNode(Node* newNode)
 
 void LinkedList::DeleteRootNode()
 {
+	if (rootNode == nullptr) return;
+
+	rootNode = rootNode->AfterNode;
+	rootNode->BeforeNode = nullptr;
 }
 
 void LinkedList::DeleteLastNode()
 {
+	if (rootNode == nullptr) return;
+
+	Node* node = rootNode;
+	while (true)
+	{
+		if (node->AfterNode == nullptr)
+		{
+			node->BeforeNode = nullptr;
+			delete node;
+			break;
+		}
+	}
 }
 
 void LinkedList::DeleteNode(Node* node)
 {
+	if (rootNode == nullptr) return;
+
+	Node* checkNode = rootNode;
+
+	while (true)
+	{
+		if (checkNode == node)
+		{
+			checkNode->BeforeNode->AfterNode = checkNode->AfterNode;
+			checkNode->AfterNode->BeforeNode = checkNode->BeforeNode;
+			delete checkNode;
+			break;
+		}
+	}
 }
 
 Node* LinkedList::GetNode(int nodeID)
