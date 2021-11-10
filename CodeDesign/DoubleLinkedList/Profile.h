@@ -5,7 +5,7 @@ class Profile
 {
 public:
 	Profile();
-	Profile(char profileName, int hs);
+	Profile(std::string profileName, int hs);
 	~Profile();
 
 	inline void SetName(const std::string name) { profileName = name; }
