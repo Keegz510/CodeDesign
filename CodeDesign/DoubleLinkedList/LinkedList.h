@@ -27,6 +27,7 @@ public:
 	void AddNodeAfter(Node* newNode, Node* nodeAfter);
 	// Adds a new node to the end of the list
 	void AddNewNode(Node* newNode);
+	// Finds a specific node based on the ID
 
 private:
 	Node* rootNode;
