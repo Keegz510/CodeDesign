@@ -18,8 +18,12 @@ void LinkedList::AddRootNode(Node* node)
 	if (node != nullptr)
 	{
 		// If we have a root node set the new node as the before node
-		if (rootNode != nullptr) 
+		if (rootNode != nullptr)
+		{
 			rootNode->BeforeNode = node;
+			node->AfterNode = rootNode;
+		}
+			
 
 		// Make the new node root node
 		rootNode = node;
