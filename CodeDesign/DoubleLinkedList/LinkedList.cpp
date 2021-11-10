@@ -1,15 +1,19 @@
 #include "LinkedList.h"
-
+#include "Profile.h"
+#include <iostream>
 LinkedList::LinkedList()
 {
+	rootNode = nullptr;
 }
 
 LinkedList::LinkedList(Node* rootNode)
 {
+	this->rootNode = rootNode;
 }
 
 LinkedList::~LinkedList()
 {
+	delete rootNode;
 }
 
 void LinkedList::AddRootNode(Node* node)
@@ -68,6 +72,18 @@ void LinkedList::AddNewNode(Node* newNode)
 	newNode->NodeID = GetNodeID();
 }
 
+void LinkedList::DeleteRootNode()
+{
+}
+
+void LinkedList::DeleteLastNode()
+{
+}
+
+void LinkedList::DeleteNode(Node* node)
+{
+}
+
 Node* LinkedList::GetNode(int nodeID)
 {
 	Node* node = rootNode;			// Set the root node as the first node
@@ -80,4 +96,35 @@ Node* LinkedList::GetNode(int nodeID)
 	}
 
 	return new Node();
+}
+
+void LinkedList::DrawList()
+{
+	Node* node = rootNode;
+	if (node != nullptr)
+	{
+		while(true)
+		{
+			// Draw the data
+			std::cout << "Username: " << node->ProfileData->GetName() << " Highest Score: " << node->ProfileData->GetHighestScore();
+			std::cout << std::endl;
+			std::cout << "||\n||\n";
+
+			// If it's the last node end the loop
+			if (node->AfterNode == nullptr)
+			{
+				std::cout << "End List" << std::endl;
+				break;
+			}
+			else
+			{
+				// Otherwise set the next node
+				node = node->AfterNode;
+			}
+		}
+	}
+	else
+	{
+		std::cout << "Profiles In List" << std::endl;
+	}
 }
