@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 #pragma region Forward Declarations
 
 class Profile;
@@ -28,6 +28,7 @@ public:
 	// Adds a new node to the end of the list
 	void AddNewNode(Node* newNode);
 	// Finds a specific node based on the ID
+	Node* GetNode(int nodeID);
 
 private:
 	Node* rootNode;

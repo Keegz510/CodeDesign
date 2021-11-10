@@ -55,10 +55,23 @@ void LinkedList::AddNewNode(Node* newNode)
 		if (nextNode->AfterNode == nullptr)
 		{
 			nextNode->AfterNode = newNode;
+			break;
 		}
 		else
 		{
 			nextNode = nextNode->AfterNode;
 		}
 	}
+}
+
+Node* LinkedList::GetNode(int nodeID)
+{
+	Node* node = rootNode;
+	while (node != nullptr)
+	{
+		if (node->NodeID == nodeID)
+			return node;
+	}
+
+	return new Node();
 }
