@@ -4,8 +4,9 @@ class State;
 
 class AppController
 {
-
+public:
 	static void LoadMainMenu() { ActiveState = new MainMenu(); }
+	static void LoadListState() { ActiveState = new DisplayList(); }
 
 	static void UpdateApplication();
 
