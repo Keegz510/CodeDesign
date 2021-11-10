@@ -8,13 +8,27 @@ class Profile;
 
 struct Node
 {
-	Node* before;			// Node that comes before this node
-	Node* after;			// Node that comes from after this node
-	Profile* data;
+public:
+	int NodeID;
+	Node* BeforeNode;			// Node that comes before this node
+	Node* AfterNode;			// Node that comes from after this node
+	Profile* ProfileData;
 };
 
 class LinkedList
 {
+public:
+	LinkedList();
+	LinkedList(Node* rootNode);
+	~LinkedList();
 
+	void AddRootNode(Node* node);
+	// Add after a certain node
+	void AddNodeAfter(Node* newNode, Node* nodeAfter);
+	// Adds a new node to the end of the list
+	void AddNewNode(Node* newNode);
+
+private:
+	Node* rootNode;
 };
 
