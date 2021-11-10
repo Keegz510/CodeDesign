@@ -20,7 +20,7 @@ public:
 	virtual void Input() = 0;
 
 
-private:
+protected:
 	std::string stateName;
 
 };
